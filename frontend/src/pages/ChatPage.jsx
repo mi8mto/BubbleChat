@@ -24,7 +24,8 @@ export default function ChatPage() {
   useEffect(() => {
     if (!username) return;
 
-    ws.current = new WebSocket("ws://localhost:8080");
+    // ws.current = new WebSocket("ws://localhost:8080");
+    ws.current = new WebSocket("wss://bubblechat-production.up.railway.app");
     ws.current.onopen = () => console.log("✅ Connected");
 
     ws.current.onmessage = (e) => {
